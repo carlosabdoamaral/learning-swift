@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ https://codeforces.com/problemset/problem/1/A
+ Theatre Square in the capital city of Berland has a rectangular shape with the size n × m meters. On the occasion of the city's anniversary, a decision was 
+ taken to pave the Square with square granite flagstones. Each flagstone is of the size a × a.
+ 
+ What is the least number of flagstones needed to pave the Square? It's allowed to cover the surface larger than the Theatre Square, but the Square has to be 
+ covered. It's not allowed to break the flagstones. The sides of flagstones should be parallel to the sides of the Square.
+ 
+ Input
+ The input contains three positive integer numbers in the first line: n,  m and a (1 ≤  n, m, a ≤ 109).
+ 
+ Output
+ Write the needed number of flagstones.
+ */
+
+/*
+ - Forma retangular com o tamanho n × m metros
+ - Pavimentar a Praça com lajes quadradas de granito. Cada laje é do tamanho a × a.
+ 
+ - Qual é o menor número de lajes necessárias para pavimentar a Praça?
+ - É permitido cobrir uma superfície maior que a Praça do Teatro, mas a Praça tem que ser
+ abordado. Não é permitido quebrar as lajes. As laterais das lajes devem ficar paralelas às laterais do 
+ Quadrado.
+ */
+
+//DIDN'T FINISHED
+func theatreSquare(_ n : Int, _ m : Int, _ a : Int) -&gt; Int{
+    var area = n * m
+    var slabArea = a * a
+
+    var nQtd : Int = n / a
+    var mQtd : Int = m / a
+    
+    return nQtd * mQtd
+}
+
+theatreSquare(6, 6, 4)
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1408}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

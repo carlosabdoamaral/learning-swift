@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ https://codeforces.com/problemset/problem/313/A
+ 
+ Ilya is a very clever lion, he lives in an unusual city ZooVille. In this city all the animals have their rights and obligations. Moreover, they even have 
+ their own bank accounts. The state of a bank account is an integer. The state of a bank account can be a negative number. This means that the owner of the 
+ account owes the bank money.
+ 
+ Ilya the Lion has recently had a birthday, so he got a lot of gifts. One of them (the gift of the main ZooVille bank) is the opportunity to delete the last 
+ digit or the digit before last from the state of his bank account no more than once. For example, if the state of Ilya's bank account is -123, then Ilya can 
+ delete the last digit and get his account balance equal to -12, also he can remove its digit before last and get the account balance equal to -13. Of course, 
+ Ilya is permitted not to use the opportunity to delete a digit from the balance.
+ 
+ Ilya is not very good at math, and that's why he asks you to help him maximize his bank account. Find the maximum state of the bank account that can be 
+ obtained using the bank's gift.
+ 
+ Input
+ The single line contains integer n (10 ≤ |n| ≤ 109) — the state of Ilya's bank account.
+ 
+ Output
+ In a single line print an integer — the maximum state of the bank account that Ilya can get.
+ 
+ */
+
+
+func bankAccount(_ n : Int) -&gt; Int {
+    var valueToReturn : Int = 0
+    
+    if n &lt; 0 {
+        let valueAsString : String = findBestValue(n)
+        valueToReturn = Int(valueAsString) ?? 0
+    } else {
+        valueToReturn = n
+    }
+    
+    print(valueToReturn)
+    return valueToReturn
+}
+
+func findBestValue(_ n : Int) -&gt; String {
+    var result : String = ""
+    var options : [Character] = []
+    var nString : String = String(n)
+    nString.removeFirst()
+    
+    for number in nString { options.append(number) }
+    var charToRemove = options.max()!
+    
+    for k in options {
+        if k != charToRemove {
+            result = "\(result)\(k)"
+        }
+    }
+    
+    return result == "0" ? "\(result)" :  "-\(result)"
+}
+
+bankAccount(2230)    // 2230
+bankAccount(-10)     // 0
+bankAccount(-100003) // -10000
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 2178}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

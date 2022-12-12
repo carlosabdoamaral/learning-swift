@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ https://codeforces.com/problemset/problem/96/A
+ 
+ Petya loves football very much. One day, as he was watching a football match, he was
+ writing the players' current positions on a piece of paper. To simplify the
+ situation he depicted it as a string consisting of zeroes and ones. A zero corresponds
+ to players of one team; a one corresponds to players of another team. If
+ there are at least 7 players of some team standing one after another, then the situation
+ is considered dangerous. For example, the situation 00100110111111101
+ is dangerous and 11110111011101 is not. You are given the current situation. Determine
+ whether it is dangerous or not.
+
+ Input
+ The first input line contains a non-empty string consisting of characters "0" and "1",
+ which represents players. The length of the string does not exceed 100
+ characters. There's at least one player from each team present on the field.
+ 
+ Output
+ Print "YES" if the situation is dangerous. Otherwise, print "NO".
+ 
+ */
+
+
+/*
+ MARK: Quicknotes
+ - A zero corresponds to players of one team; 
+ - A one corresponds to players of another team;
+ */
+
+
+func football(_ S : String) -&gt; String{
+    var result : String = ""
+    
+    var a_counter : Int = 0 // Número de itens seguidos
+    var b_counter : Int = 0 // Número de itens seguidos
+    
+    var i : Int = 1
+    for char in S {
+        
+        switch char {
+        case "0":
+            a_counter+=1
+            b_counter = 0
+        case "1":
+            b_counter+=1
+            a_counter = 0
+        default:
+            return result
+        }
+        
+        if a_counter &gt;= 7 || b_counter &gt;= 7 {
+            result = "YES"
+            break
+        } else {
+            result = "NO"
+        }
+        
+        i+=1
+    }
+    
+    print(result)
+    return result
+}
+
+
+football("001001")     // NO
+football("1000000001") // YES
+football("1000100001") // NO
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1880}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
